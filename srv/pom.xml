@@ -12,7 +12,7 @@
 	<packaging>war</packaging>
 	<name>srv</name>
 	<properties>
-		<packageName>my.bookshop</packageName>
+		<packageName>agreement</packageName>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}-${project.version}</finalName>

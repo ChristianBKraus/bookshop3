@@ -9,7 +9,7 @@ type ExchangeRateType : String enum { monthlyAverage; };
 type PaymentMethodType : String enum { nettingByInhouseBank; };
 type CostAllocationObjectType : String enum { Project; };
  
-entity ServiceAgreement : base.managed {
+entity ServiceAgreement : base.managed { 
   key ID : String;
   // Base
   serviceType : ServiceType;

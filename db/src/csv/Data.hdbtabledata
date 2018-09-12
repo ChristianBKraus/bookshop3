@@ -1,0 +1,132 @@
+{
+	"format_version": 1,
+	"imports": [
+		{
+			"target_table": "AGREEMENT_SERVICEAGREEMENT",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "ServiceAgreement.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"STATUS",
+					"CREATEDAT",
+					"CREATEDBY",
+					"CHANGEDAT",
+					"CHANGEDBY",
+					"ID",
+					"SERVICETYPE",
+					"DESCRIPTION",
+					"LONGDESCRIPTION",
+					"VALIDFROM",
+					"VALIDTO",
+					"RESPONSIBLEPERSON",
+					"APPROVALPERSON",
+					"BILLINGMETHOD",
+					"BILLINGFREQUENCY",
+					"COSTALLOCATIONMETHOD",
+					"CURRENCY",
+					"PLANNEDEXCHANGERATE",
+					"PAYMENTMETHOD",
+					"BUSINESSPARTNER_ID",
+					"COSTALLOCATIONOBJECT_ID"
+				]
+			}
+		},
+		{
+			"target_table": "AGREEMENT_SERVICERECEIVER",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "ServiceReceiver.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"SERVICEAGREEMENT_ID",
+					"BUSINESSPARTNER_ID",
+					"COMPANY_ID",
+					"COSTALLOCATIONOBJECT_ID"
+				]
+			}
+		},
+		{
+			"target_table": "AGREEMENT_PLANNEDCOST",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "PlannnedCost.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"SERVICEAGREEMENT_ID",
+					"VALIDFROM",
+					"VALIDTO",
+					"COSTELEMENT_ID",
+					"AMOUNT_AMOUNT",
+					"AMOUNT_CURRENCY"
+				]
+			}
+		},
+		{
+			"target_table": "BUSINESSPARTNER",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "BusinessPartner.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"DESCRIPTION"
+				]
+			}
+		},
+		{
+			"target_table": "COMPANY",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Company.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"CODE",
+					"DESCRIPTION"
+				]
+			}
+		},
+		{
+			"target_table": "COSTALLOCATIONOBJECT",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "CostAllocationObject.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"COSTALLOCATIONOBJECTTYPE",
+					"DESCRIPTION"
+				]
+			}
+		},
+		{
+			"target_table": "COSTELEMENT",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "CostElement.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"DESCRIPTION"
+				]
+			}
+		}
+	]
+}

@@ -13,7 +13,7 @@ public class ServiceHook {
 	public final static String serviceName = "ServiceAgreementService";
 	
 	private final Logger logger = LoggerFactory.getLogger(ServiceHook.class);
-	private final ServiceInterface service = ServiceFactory.getInstance(serviceName);
+	private final ServiceInterface service = Service.getInstance();
 	
 	@InitTransaction( serviceNames = serviceName ) 
 	public void startTrans(List<GenericRequest> requests, ExtensionHelper eh) {
@@ -24,7 +24,7 @@ public class ServiceHook {
 	@EndTransaction( serviceNames = serviceName)
 	public void endTrans(List<GenericRequest> requests, ExtensionHelper eh) throws Exception {
 	  logger.info("Validate " + serviceName);
-	  service.validate();
+	  service.validateAll();
 	}
 	
 }

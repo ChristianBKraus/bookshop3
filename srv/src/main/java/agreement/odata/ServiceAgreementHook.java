@@ -9,13 +9,14 @@ import org.slf4j.LoggerFactory;
 
 import agreement.model.ServiceAgreement;
 import agreement.service.*;
+import utility.service.ValidationException;
 
 
 public class ServiceAgreementHook  {
 	public final static String entityName = "ServiceAgreement";
 
 	private final Logger logger = LoggerFactory.getLogger(ServiceAgreementHook.class);
-	private final ServiceInterface service = ServiceFactory.getInstance(ServiceHook.serviceName);
+	private final ServiceInterface service = Service.getInstance();
     
     @BeforeCreate (entity = entityName, serviceName = ServiceHook.serviceName) 
     public BeforeCreateResponse beforecreate(CreateRequest cr, ExtensionHelper eh) throws ValidationException {

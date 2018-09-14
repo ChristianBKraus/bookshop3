@@ -16,13 +16,13 @@ public class ServiceHook {
 	private final ServiceInterface service = Service.getInstance();
 	
 	@InitTransaction( serviceNames = serviceName ) 
-	public void startTrans(List<GenericRequest> requests, ExtensionHelper eh) {
+	public void startTrans(List<Request> requests, ExtensionHelper eh) {
 		logger.info("Init Transaction");
 		service.initialize();
 	}
 	
-	@EndTransaction( serviceNames = serviceName)
-	public void endTrans(List<GenericRequest> requests, ExtensionHelper eh) throws Exception {
+	@EndTransaction( serviceNames = serviceName )
+	public void endTrans(List<Request> requests, ExtensionHelper eh) throws Exception {
 	  logger.info("Validate " + serviceName);
 	  service.validateAll();
 	}
